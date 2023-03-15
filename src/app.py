@@ -38,6 +38,7 @@ user_topic = st.text_input("Enter a topic")
 
 
 if user_topic:
+    user_topic = user_topic.lower()
     outline = generate_outline(user_topic)
     sections = parse_content(outline)
     
