@@ -2,11 +2,11 @@ import openai
 import toml
 import streamlit as st
 import re
+import os
 
-with open("secrets.toml", "r") as f:
-    config = toml.load(f)
+secrets = os.environ.get("SECRETS")
 
-openai.api_key = config['OPENAI_KEY']
+openai.api_key = secrets['OPENAI_KEY']
 
 
 @st.cache_data(show_spinner=False)
