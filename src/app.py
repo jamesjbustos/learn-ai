@@ -2,12 +2,8 @@ import openai
 import toml
 import streamlit as st
 import re
-import requests
 
-headers = {
-    "authorization" : st.secrets["auth token"],
-    "content-type" : "applications/json"
-}
+openai.api_key = st.secrets["api_key"]
 
 @st.cache_data(show_spinner=False)
 def generate_outline(topic):
